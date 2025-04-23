@@ -2,6 +2,9 @@
 #include <string.h>
 #include <locale.h>
 
-int main(){
-   printf("\nOlá Moon!\n"); 
-}
+struct data
+{
+   int ano; 
+   char mes[30];
+   int dia;   
+};
