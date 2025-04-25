@@ -2,14 +2,29 @@
 
 int main(){
 
-    char letra[1];
+    char letra;
+    int num;
 
-    printf("Digite uma letra: ");
-    scanf("%s", letra[1]);
+    printf("Digite uma letra maiuscula: ");
+    scanf(" %c", &letra);
 
-    if (letra[1] == "B")
+    if ((letra == 'B') || (letra == 'P'))
     {
-        printf("Ele vive");
+        if (letra == 'B')
+        {
+            printf("\nDigite um número: ");
+            scanf("%d", &num);
+            
+            if (num == 1)
+            {
+                while ((num != 1) || (num != 357) || (num != 617))
+                {
+                    printf("\nDigite um número: ");
+                    scanf("%d", &num);
+                }
+                   
+            }    
+        }
     }
     
 }
