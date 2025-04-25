@@ -17,12 +17,22 @@ int main(){
             
             if (num == 1)
             {
-                while ((num != 1) || (num != 357) || (num != 617))
+                num = 0;
+                while ((num != 1) && (num != 357) && (num != 617))
                 {
                     printf("\nDigite um número: ");
                     scanf("%d", &num);
-                }
-                   
+                    
+                    if (num == 1)
+                    {
+                        num = 0;
+                        while (num != 7)
+                        {
+                            printf("Digite um número: ");
+                            scanf("%d", &num);   
+                        }
+                    }  
+                }  
             }    
         }
     }
