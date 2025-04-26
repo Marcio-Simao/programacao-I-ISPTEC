@@ -30,6 +30,11 @@ int main(){
                         {
                             printf("Digite um número: ");
                             scanf("%d", &num);   
+
+                            if(num = 7)
+                            {
+                               printf("\nVariante ALFA do Reino Unido\n"); 
+                            }
                         }
                     }  
                 }  
