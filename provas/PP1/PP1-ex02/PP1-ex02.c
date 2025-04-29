@@ -36,7 +36,13 @@ int main(){
                                printf("\nVariante ALFA do Reino Unido\n"); 
                             }
                         }
-                    }  
+                    }
+                    
+                    if (num == 357)
+                    {
+                        /* code */
+                    }
+                    
                 }  
             }    
         }
