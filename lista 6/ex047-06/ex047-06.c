@@ -11,7 +11,7 @@ int main(){
     printf("\nDigite o número correspondente a área!\n");
     printf("\nÁREAS DA ENGENHARIA INFORMÁTICA\n");
     printf("\nProgramação-[1]\n");
-    printf("\nAdministração-[2]\n");
+    printf("\nAdministração de redes-[2]\n");
     printf("\nAdministração de Base de Dados-[3]\n");
     printf("\nCloud Computing-[4]\n");
     printf("\nChief Technology Officer-[5]\n");
@@ -61,25 +61,28 @@ int main(){
     }
         
     case 2:
-        printf("consegui");
+        printf("\nespec. conexão local/internet/cabeamentos/equipamentos microsoft(MCP,MCSE e MCSA), ou Cisco-CCNA\n");
         break;    
     case 3:
-        printf("consegui");
+        printf("\nGestão/Data centers/Desenvolver sisitemas BD\n");
         break; 
     case 4:
-        printf("consegui");
+        printf("\nespecialista em Big Data\n");
+        printf("\nespecialista em inteligência Artifical");
+        printf("\nespecialista em internet das coisas\n");
+        printf("espe. em HPC-High performance");
         break;  
     case 5:
-        printf("consegui");
+        printf("\npesquisas sobre TI; Desenvolvimento novas ideias responsável da empresa de TI\n");
         break;
     case 6:
-        printf("consegui");
+        printf("\ngestão de e-commerce/segurança de dados dos clientes/ manter a disponibilidade do site\n");
         break;
     case 7:
-        printf("consegui");
+        printf("\nTestador de todo tipo de softwares\n");
         break;
     case 8:
-        printf("consegui");
+        printf("\nAnalista de segurança, proteção dos dados, monitorar \n");
         break;
     case 9:
         printf("consegui");
