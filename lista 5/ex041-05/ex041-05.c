@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main(){
-
+    //declaração de variaveis simples 
     int numero, maior_numero = 0;
-
+    //loop para comparar 
     for(int i = 0; i <= 5; i++){
         
         printf("Digite um número: ");
