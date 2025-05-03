@@ -42,8 +42,8 @@ int main(){
       printf("Preço: ");
       scanf("%.3f", vet_carro[i].preco);
 
-      printf("");
-      scanf("");
+      printf("Data: ");
+      scanf("%");
    }
        
    
