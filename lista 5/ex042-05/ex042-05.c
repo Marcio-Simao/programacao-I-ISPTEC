@@ -39,11 +39,19 @@ int main(){
       printf("\nCor: ");
       scanf("%s", vet_carro[i].cor);
 
-      printf("Preço: ");
+      printf("\nPreço: ");
       scanf("%.3f", vet_carro[i].preco);
 
-      printf("Data: ");
-      scanf("%");
+      printf("\nDATA\n");
+
+      printf("Dia: ");
+      scanf("%d", &vet_carro[i].data.dia);
+      
+      printf("\nMês: ");
+      scanf("%s", vet_carro[i].data.mes);
+
+      printf("\nAno: ");
+      scanf("%d", &vet_carro[i].data.ano);
    }
        
    
