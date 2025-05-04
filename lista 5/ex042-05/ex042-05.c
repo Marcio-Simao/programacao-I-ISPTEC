@@ -63,6 +63,9 @@ int main(){
    printf("\nCARROS REGISTADOS\n");
        
    for(int i = 0; i < quant; i++){
+
+      if (prec <= vet_carro[i].preco)
+      {      
       
       printf("\nMarca: %s \n", vet_carro[i].marca);
 
@@ -71,7 +74,7 @@ int main(){
       printf("\nPreço: %.3f", vet_carro[i].preco);
 
       printf("\nData: %d / %d / %d", vet_carro[i].data.dia, vet_carro[i].data.mes, vet_carro[i].data.ano);
-
+      }   
    }
    
 
