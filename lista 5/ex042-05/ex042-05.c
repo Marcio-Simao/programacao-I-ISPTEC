@@ -5,11 +5,11 @@
 struct data
 {
    int ano; 
-   char mes[30];
+   int mes;
    int dia;   
 };
 
-typedef data data;
+typedef struct data data;
 
 struct carro 
 {
@@ -19,7 +19,7 @@ struct carro
    data data;
 };
 
-typedef carro carro;
+typedef struct carro carro;
 
 //aeron smith
 /*
@@ -31,8 +31,10 @@ int main(){
 
    printf("\nREGISTRAR CARRO\n");
    
-   for (int i = 0; i < 20; i++)
+   for (int i = 0; i < 3; i++)
    {
+      printf("\n%dº CARRO\n", i);
+
       printf("\nMarca: ");
       scanf("%s", vet_carro[i].marca);
 
@@ -40,21 +42,28 @@ int main(){
       scanf("%s", vet_carro[i].cor);
 
       printf("\nPreço: ");
-      scanf("%.3f", vet_carro[i].preco);
+      scanf("%f", &vet_carro[i].preco);
 
       printf("\nDATA\n");
 
-      printf("Dia: ");
-      scanf("%d", &vet_carro[i].data.dia);
-      
-      printf("\nMês: ");
-      scanf("%s", vet_carro[i].data.mes);
-
-      printf("\nAno: ");
-      scanf("%d", &vet_carro[i].data.ano);
+      printf("\ndd/mm/aa\n");
+      scanf("%d %d %d", &vet_carro[i].data.dia, &vet_carro[i].data.mes, &vet_carro[i].data.ano);
+     
    }
+
+   printf("\nCARROS REGISTADOS\n");
        
-   
+   for(int i = 0; i < 3; i++){
+      
+      printf("\nMarca: %s \n", vet_carro[i].marca);
+
+      printf("\nCor: %s\n", vet_carro[i].cor); 
+
+      printf("\nPreço: %.3f", vet_carro[i].preco);
+
+      printf("\nData: %d / %d / %d", vet_carro[i].data.dia, vet_carro[i].data.mes, vet_carro[i].data.ano);
+
+   }
    
 
 }
