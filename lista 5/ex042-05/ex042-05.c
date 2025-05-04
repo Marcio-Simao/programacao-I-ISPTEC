@@ -28,10 +28,16 @@ typedef struct carro carro;
 */
 carro vet_carro[20];
 int main(){
+   
+   int quant;
+   float prec;
+
+   printf(" Quantos carros desejas registrar: ");
+   scanf("%d", quant);
 
    printf("\nREGISTRAR CARRO\n");
    
-   for (int i = 0; i < 3; i++)
+   for (int i = 0; i < quant; i++)
    {
       printf("\n%dº CARRO\n", i);
 
@@ -51,9 +57,12 @@ int main(){
      
    }
 
+   printf("Digite o preço: ");
+   scanf("%f", &prec);
+
    printf("\nCARROS REGISTADOS\n");
        
-   for(int i = 0; i < 3; i++){
+   for(int i = 0; i < quant; i++){
       
       printf("\nMarca: %s \n", vet_carro[i].marca);
 
