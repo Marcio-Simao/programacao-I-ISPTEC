@@ -3,7 +3,7 @@
 #define cont 20
 struct Ida
 {
-    int idade[cont]
+    int idade[cont];
 };
 
 int main()
