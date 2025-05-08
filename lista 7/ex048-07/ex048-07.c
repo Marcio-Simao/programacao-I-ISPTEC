@@ -22,7 +22,7 @@ int main()
     printf("\n--REGISTRO PESSOA--\n");
     
     printf("\nSexo(M/F): ");
-    scanf("%c", pessoa1.sexo);
+    scanf(" %c", &pessoa1.sexo);
     
     printf("Peso: ");
     scanf("%f", &pessoa1.peso);
@@ -33,9 +33,9 @@ int main()
     
     printf("\n--PESSOAS REGISTRADAS--\n");
     
-    printf("Sexo: %c", pessoa1.sexo);
+    printf("\nSexo: %c\n", pessoa1.sexo);
     
-    printf("Sexo: %.2", pessoa1.peso);
+    printf("\npeso: %.2f\n", pessoa1.peso);
     
     printf("\n_____________________\n");
     
