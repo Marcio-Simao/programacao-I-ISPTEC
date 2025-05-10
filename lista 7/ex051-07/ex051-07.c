@@ -23,7 +23,7 @@ struct Formatura
     Data_For data_for [4]; 
     char desegnacao_For [4] [70];
 };
-typedef Formatura Formatura;
+typedef struct Formatura Formatura;
 //estrutura data de nascimento
 struct Data_Nasc 
 {
@@ -67,7 +67,7 @@ int main ()
             break;
         
             case '2':
-                /* adicionar */
+                cont = adicionar(pessoas, cont);
             break;
         
             case '3':
@@ -116,14 +116,45 @@ void Mostrar ( Pessoa pessoas[], int cont)
 
                 printf("\nData de Formatura: \n");
 
-                printf("%d de %s de %d", pessoas[i].formatura.data_for[l].dia, pessoas[i].formatura.data_for[l].mes), pessoas[i].formatura.data_for[l].ano;
+                printf("%d de %s de %d", pessoas[i].formatura.data_for[l].dia, pessoas[i].formatura.data_for[l].mes , pessoas[i].formatura.data_for[l].ano);
                 
-            }
-            
-            
-        }
-        
+            }   
+        }   
+    }    
+}
+//função adicionar
+int adicionar( Pessoa pessoas[], int cont)
+{
+    if (cont == MAX)
+    {
+        printf("\nexcedeu a quantidade de idades registrados!\n");
     }
-    
-    
-} 
+ else
+    {
+        
+        printf("\n--ADICIONAR PESSAO--\n");
+        
+        printf("\nidade: ");
+        sscanf(" %d", &pessoas[cont].idade);
+
+        printf("\ndata de nascimento: ");
+        scanf("%d  %s  %d", &pessoas[cont].data_nasc.dia, &pessoas[cont].data_nasc.mes, &pessoas[cont].data_nasc.ano);
+
+        printf("\n--FORMATURA--\n");
+
+        for (int l = 0; l < 4; l++)
+        {
+            printf("\ndesignação da sua formatura:\n");
+            scanf("%s", &pessoas[cont].formatura.desegnacao_For[l]);
+
+            printf("\nLocal: ");
+            scanf(" %s %s ", &pessoas[cont].formatura.local[l].pais, &pessoas[cont].formatura.local[l].provincia);
+
+            printf("\nData de Formatura: \n");
+
+            scanf("%d %s %d", &pessoas[cont].formatura.data_for[l].dia, &pessoas[cont].formatura.data_for[l].mes, &pessoas[cont].formatura.data_for[l].ano);
+                
+        } 
+        return cont += 1;    
+    } 
+}
