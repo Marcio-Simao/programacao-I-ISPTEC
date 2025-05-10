@@ -48,6 +48,8 @@ void Mostrar ( Pessoa pessoas[], int cont);
 
 int adicionar( Pessoa pessoas[], int cont);
 
+int remover( Pessoa pessoas[], int cont);
+
 int main ()
 {
     Pessoa pessoas[MAX];
@@ -74,7 +76,7 @@ int main ()
             break;
         
             case '3':
-                /* remover */
+                cont = remover(pessoas, cont);
             break;
             
             case '0':
