@@ -2,19 +2,16 @@
 #include <locale.h>
 #define max 100
 
-
-int adicionar(Ida){
-
-} 
+int mostrar ( int Ida, int cont);
 
 struct Ida
 {
     int idade[max];
 };
-
+typedef struct Ida Ida;
 int main()
 {
-    struct Ida idade; 
+    Ida idade; 
     int soma = 0;
     char opcao; 
     int cont = 0;
@@ -41,11 +38,28 @@ int main()
             case '3':
             /* code */
             break;
+
+            case 'o': 
+                printf("    nPrograma terminado!\n");
+            break;
+
             default:
                 printf("Valor invalido!");
             break;
         }
    } while (opcao != 'o');
    
+
+}
+
+int mostrar ( int Ida, int cont){
+    if (max == cont)
+    {
+        /* code */
+    }
+    
+    for(int i = 0; i  ){
+
+    }
 
 }
