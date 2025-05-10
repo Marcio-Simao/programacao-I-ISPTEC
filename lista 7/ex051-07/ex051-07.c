@@ -19,9 +19,9 @@ typedef struct Data_For Data_For;
 //estrutura formatura
 struct Formatura
 {
-    Local local [4];
-    Data_For data_for [4]; 
-    char desegnacao_For [4] [70];
+    Local local [2];
+    Data_For data_for [2]; 
+    char desegnacao_For [2] [70];
 };
 typedef struct Formatura Formatura;
 //estrutura data de nascimento
@@ -44,6 +44,8 @@ struct Pessoa
 typedef struct Pessoa Pessoa;
 
 void Mostrar ( Pessoa pessoas[], int cont);
+
+int adicionar( Pessoa pessoas[], int cont);
 
 int main ()
 {
@@ -76,7 +78,7 @@ int main ()
             
             case '0':
                 /* sair */
-                printf("Programa encerrado!");
+                printf("\nPrograma encerrado!\n");
             break;
         
             default:
@@ -108,7 +110,7 @@ void Mostrar ( Pessoa pessoas[], int cont)
             
             printf("\ndesignação da sua formatura:\n");
 
-            for (int l = 0; l < 4; l++)
+            for (int l = 0; l < 2; l++)
             {
                 printf("\n%s\n", pessoas[i].formatura.desegnacao_For[l]);
 
@@ -132,29 +134,46 @@ int adicionar( Pessoa pessoas[], int cont)
  else
     {
         
-        printf("\n--ADICIONAR PESSAO--\n");
+        printf("\n--ADICIONAR PESSOA--\n");
         
         printf("\nidade: ");
-        sscanf(" %d", &pessoas[cont].idade);
+        scanf(" %d", &pessoas[cont].idade);
+        while (getchar() != '\n');
 
         printf("\ndata de nascimento: ");
-        scanf("%d  %s  %d", &pessoas[cont].data_nasc.dia, &pessoas[cont].data_nasc.mes, &pessoas[cont].data_nasc.ano);
+        scanf("%d  %s  %d", &pessoas[cont].data_nasc.dia, pessoas[cont].data_nasc.mes, &pessoas[cont].data_nasc.ano);
+        while (getchar() != '\n');
 
         printf("\n--FORMATURA--\n");
 
-        for (int l = 0; l < 4; l++)
+        for (int l = 0; l < 2; l++)
         {
-            printf("\ndesignação da sua formatura:\n");
-            scanf("%s", &pessoas[cont].formatura.desegnacao_For[l]);
+            printf("\n------------------\n");
 
-            printf("\nLocal: ");
-            scanf(" %s %s ", &pessoas[cont].formatura.local[l].pais, &pessoas[cont].formatura.local[l].provincia);
+            printf("\ndesignação da sua formatura:\n");
+            scanf("%[^\n]", pessoas[cont].formatura.desegnacao_For[l]);
+            while (getchar() != '\n');
+
+            printf("\n--Local--\n ");
+            printf("\nPaís: ");
+            scanf(" %s", pessoas[cont].formatura.local[l].pais);
+            while (getchar() != '\n');
+
+
+            printf("Provícia: ");
+            scanf(" %s", pessoas[cont].formatura.local[l].provincia);
+            while (getchar() != '\n');
 
             printf("\nData de Formatura: \n");
 
-            scanf("%d %s %d", &pessoas[cont].formatura.data_for[l].dia, &pessoas[cont].formatura.data_for[l].mes, &pessoas[cont].formatura.data_for[l].ano);
-                
+            scanf("%d %s %d", &pessoas[cont].formatura.data_for[l].dia, pessoas[cont].formatura.data_for[l].mes, &pessoas[cont].formatura.data_for[l].ano);
+            while (getchar() != '\n');
+
+            printf("\n------------------\n");
         } 
+
+        printf("\n------------------\n");
+
         return cont += 1;    
     } 
 }
