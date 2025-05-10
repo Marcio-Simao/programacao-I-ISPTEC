@@ -2,13 +2,13 @@
 #include <locale.h>
 #define MAX 100
 
-void mostrar ( Ida dados, int cont);
-
 struct Ida
 {
     int idade[MAX];
 };
 typedef struct Ida Ida;
+
+void mostrar ( Ida dados, int cont);
 
 int main()
 {
@@ -20,11 +20,11 @@ int main()
 
     do
    {
-        printf("--MENU--");
-        printf("1-mostrar");
-        printf("2-adicionar");
-        printf("3-Remover");
-        printf("0-sair");
+        printf("\n--MENU--\n");
+        printf("\n1-mostrar\n");
+        printf("\n2-adicionar\n");
+        printf("\n3-Remover\n");
+        printf("\n0-sair\n");
         scanf(" %c", &opcao);
 
         switch (opcao)
@@ -42,7 +42,7 @@ int main()
             break;
 
             case 'o': 
-                printf("    nPrograma terminado!\n");
+                printf("\nPrograma terminado!\n");
             break;
 
             default:
@@ -66,4 +66,8 @@ void mostrar ( Ida dados, int cont){
             printf("\nIdade: %d\n", dados.idade[i]);
         }
     }
+}
+
+void adicionar(){
+    
 }
