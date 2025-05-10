@@ -108,10 +108,13 @@ void Mostrar ( Pessoa pessoas[], int cont)
 
             printf("\n--FORMATURA--\n");
             
-            printf("\ndesignação da sua formatura:\n");
-
+            
             for (int l = 0; l < 2; l++)
-            {
+            {   
+                printf("\n------------------\n");
+                
+                printf("\ndesignação da sua formatura:\n");
+
                 printf("\n%s\n", pessoas[i].formatura.desegnacao_For[l]);
 
                 printf("\nLocal: %s/ %s \n", pessoas[i].formatura.local[l].pais, pessoas[i].formatura.local[l].provincia);
@@ -120,6 +123,7 @@ void Mostrar ( Pessoa pessoas[], int cont)
 
                 printf("%d de %s de %d", pessoas[i].formatura.data_for[l].dia, pessoas[i].formatura.data_for[l].mes , pessoas[i].formatura.data_for[l].ano);
                 
+                printf("\n------------------\n");
             }   
         }   
     }    
