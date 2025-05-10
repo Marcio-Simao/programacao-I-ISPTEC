@@ -12,11 +12,13 @@ void mostrar ( Ida dados, int cont);
 
 int adicionar( Ida *dados, int cont);
 
+int remover( Ida *dados, int cont);
+
 int main()
 {
     Ida idade;
 
-    int soma = 0, cont = 0;
+    int cont = 0;
     
     char opcao; 
 
@@ -40,7 +42,7 @@ int main()
             break;
 
             case '3':
-                
+                cont = remover(&idade, cont);
             break;
 
             case '0': 
@@ -91,9 +93,35 @@ int adicionar( Ida *dados, int cont)
     
 }
 
-void remover()
+int remover( Ida *dados, int cont)
 {
+    int a;
 
+    if (cont == 0)
+    {
+        printf("\nnenhuma idade registrada!\n");
+    }
 
-    
+    else
+    {
+        printf("\n--REMOVER--\n");
+       
+        printf("\ndigite o número da idade que desejas remover!\n");
+        printf("\nescolhar apenas uma idade\n");
+       
+        for (int i = 0; i < cont; i++)
+        {
+            printf("\n%d-idade: %d\n", i, dados->idade[i]);
+        }
+       
+        printf("Digite um valor de 0 á %d", cont);
+        scanf(" %d", &a);
+
+        for (;a < cont; a++)
+        {
+            dados->idade[a] = dados->idade[a + 1];
+        }
+        
+        return cont -= 1;
+    }
 }
