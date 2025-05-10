@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <locale.h>
+#include <string.h>
 #define MAX 100
 //estrutura local da formatura
 struct Local
@@ -184,10 +185,45 @@ int adicionar( Pessoa pessoas[], int cont)
 //Função remover
 int remover( Pessoa pessoas[], int cont)
 {
-    int a; 
+    int posicao; 
     
     if (cont == 0)
     {
         printf("\nnenhuma pessoa registrada!\n");
     }
+
+    else
+    {
+        printf("\n--REMOVER--\n");
+       
+        printf("\ndigite o número da idade que desejas remover!\n");
+        printf("\nescolhar apenas uma idade\n");
+        printf("Digite um valor de 0 a %d", cont);
+        scanf(" %d", &posicao);
+       
+        for (;posicao < cont; posicao++)
+        {
+            //dados->idade[a] = dados->idade[a + 1];
+            //passando o valor da idade de uma posição para outra
+            pessoas[posicao].idade = pessoas[posicao + 1].idade;
+
+            pessoas[posicao].data_nasc.dia = pessoas[posicao + 1].data_nasc.dia;
+            strcpy(pessoas[posicao].data_nasc.mes, pessoas[posicao + 1].data_nasc.mes);
+            pessoas[posicao].data_nasc.dia = pessoas[posicao + 1].data_nasc.ano;
+
+            for (int i = 0; i < 2; i++)
+            {
+               pessoas[posicao].formatura.data_for[i].dia = pessoas[posicao + 1].formatura.data_for[i].dia;
+               strcpy(pessoas[posicao].formatura.data_for[i].mes, pessoas[posicao + 1].formatura.data_for[i].mes);
+               pessoas[posicao].formatura.data_for[i].dia = pessoas[posicao + 1].formatura.data_for[i].ano;
+
+               strcpy(pessoas[posicao].formatura.desegnacao_For[i], pessoas[posicao + 1].formatura.desegnacao_For[i]);
+
+               strcpy(pessoas[posicao].formatura.local[i].pais, pessoas[posicao + 1].formatura.local[i].pais);
+               strcpy(pessoas[posicao].formatura.local[i].provincia, pessoas[posicao + 1].formatura.local[i].provincia);
+            }   
+        }
+        return cont -= 1;
+    }
+    
 }
