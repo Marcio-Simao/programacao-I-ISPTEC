@@ -10,7 +10,7 @@ typedef struct Ida Ida;
 
 void mostrar ( Ida dados, int cont);
 
-int adicionar( Ida dados, int cont);
+int adicionar( Ida *dados, int cont);
 
 int main()
 {
@@ -36,14 +36,14 @@ int main()
             break;
             
             case '2':
-            /* code */
+                cont = adicionar(&idade, cont);
             break;
 
             case '3':
-            /* code */
+                
             break;
 
-            case 'o': 
+            case '0': 
                 printf("\nPrograma terminado!\n");
             break;
 
@@ -51,7 +51,7 @@ int main()
                 printf("Valor invalido!");
             break;
         }
-   } while (opcao != 'o');
+   } while (opcao != '0');
    
 
 }
@@ -71,7 +71,7 @@ void mostrar ( Ida dados, int cont)
     }
 }
 
-int adicionar( Ida dados, int cont)
+int adicionar( Ida *dados, int cont)
 {
     if (cont == MAX)
     {
@@ -80,12 +80,20 @@ int adicionar( Ida dados, int cont)
 
     else
     {
+
         printf("\nDigite idade: ");
-        scanf("%d", &dados.idade[cont]);
+        scanf("%d", &dados->idade[cont]);
         
         cont += 1;
 
         return cont;
     }
+    
+}
+
+void remover()
+{
+
+
     
 }
