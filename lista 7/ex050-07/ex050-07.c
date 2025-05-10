@@ -10,6 +10,8 @@ typedef struct Ida Ida;
 
 void mostrar ( Ida dados, int cont);
 
+int adicionar( Ida dados, int cont);
+
 int main()
 {
     Ida idade;
@@ -54,7 +56,8 @@ int main()
 
 }
 
-void mostrar ( Ida dados, int cont){
+void mostrar ( Ida dados, int cont)
+{
     if (cont == 0)
     {
         printf("\nnenhuma idade registrada!\n");
@@ -68,6 +71,21 @@ void mostrar ( Ida dados, int cont){
     }
 }
 
-void adicionar(){
+int adicionar( Ida dados, int cont)
+{
+    if (cont == MAX)
+    {
+        printf("\nexcedeu a quantidade de idades registrados!\n");
+    }
+
+    else
+    {
+        printf("\nDigite idade: ");
+        scanf("%d", &dados.idade[cont]);
+        
+        cont += 1;
+
+        return cont;
+    }
     
 }
