@@ -181,3 +181,13 @@ int adicionar( Pessoa pessoas[], int cont)
         return cont += 1;    
     } 
 }
+//Função remover
+int remover( Pessoa pessoas[], int cont)
+{
+    int a; 
+    
+    if (cont == 0)
+    {
+        printf("\nnenhuma pessoa registrada!\n");
+    }
+}
