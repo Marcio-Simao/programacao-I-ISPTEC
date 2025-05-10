@@ -1,33 +1,30 @@
 #include <stdio.h>
 #include <locale.h>
 #define MAX 100
-
+//estrutura local da formatura
 struct Local
 {
     char pais[70];
     char provincia[50];
 };
-
 typedef struct Local Local;
-
+//estrutura data de formatura 
 struct Datas_For
 {
     int dia;
     char mes[15];
     int ano;
 };
-
 typedef struct Datas_For Datas_For;
-
+//estrutura formatura
 struct Formatura
 {
-    Local local;
-    Datas_For data_for [3]; 
+    Local local [4];
+    Datas_For data_for [4]; 
     char desegnacao_For [4] [70]
 };
-
 typedef Formatura Formatura;
-
+//estrutura data de nascimento
 struct Data_Nasc 
 {
     int dia;
@@ -36,7 +33,7 @@ struct Data_Nasc
 };
 
 typedef struct Data_Nasc Data_Nasc;
-
+//estrutura pessoa
 struct Pessoa
 {
     int idade;
@@ -79,8 +76,8 @@ int main ()
         }
     } while (opcao != '0');
 }
-
-void Mostrar ( Pessoa *pessoas, int cont)
+//função mostrar
+void Mostrar ( Pessoa pessoas[], int cont)
 {
     if (cont == 0)
     {
@@ -93,13 +90,26 @@ void Mostrar ( Pessoa *pessoas, int cont)
         {
             printf("\n--%d PESSAO--\n");
             
-            printf("\nidade: %d\n", pessoas->idade);
+            printf("\nidade: %d\n", pessoas[i].idade);
 
             printf("\ndata de nascimento\n");
-            printf("\nDD/MM/AA\n");
-            scanf("%d %d %d", pessoas->data_nasc.dia, pessoas->data_nasc.mes, pessoas->data_nasc.ano);
+            printf("\n%d de %s de %d\n", pessoas[i].data_nasc.dia, pessoas[i].data_nasc.mes, pessoas[i].data_nasc.ano);
 
+            printf("\n--FORMATURA--\n");
+            
+            printf("\ndesignação da sua formatura:\n");
 
+            for (int l = 0; l < 4; l++)
+            {
+                printf("%s", pessoas[i].formatura.desegnacao_For[l]);
+
+                printf("Local: %s ", pessoas[i].formatura.local[l].pais);
+                
+                printf("Local: %s ", pessoas[i].formatura.local[l].provincia);
+                
+            }
+            
+            
         }
         
     }
