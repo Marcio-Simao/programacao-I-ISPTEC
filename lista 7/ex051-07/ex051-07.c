@@ -9,19 +9,19 @@ struct Local
 };
 typedef struct Local Local;
 //estrutura data de formatura 
-struct Datas_For
+struct Data_For
 {
     int dia;
     char mes[15];
     int ano;
 };
-typedef struct Datas_For Datas_For;
+typedef struct Data_For Data_For;
 //estrutura formatura
 struct Formatura
 {
     Local local [4];
-    Datas_For data_for [4]; 
-    char desegnacao_For [4] [70]
+    Data_For data_for [4]; 
+    char desegnacao_For [4] [70];
 };
 typedef Formatura Formatura;
 //estrutura data de nascimento
@@ -43,6 +43,8 @@ struct Pessoa
 
 typedef struct Pessoa Pessoa;
 
+void Mostrar ( Pessoa pessoas[], int cont);
+
 int main ()
 {
     Pessoa pessoas[MAX];
@@ -51,10 +53,17 @@ int main ()
     
     do
     {
+        printf("\n--MENU--\n");
+        printf("\n1-mostrar\n");
+        printf("\n2-adicionar\n");
+        printf("\n3-Remover\n");
+        printf("\n0-sair\n");
+        scanf(" %c", &opcao);
+
         switch (opcao)
         {
             case '1':
-                /* mostrar */
+                Mostrar(pessoas, cont);
             break;
         
             case '2':
@@ -88,7 +97,7 @@ void Mostrar ( Pessoa pessoas[], int cont)
     {
         for (int i = 0; i < cont; i++)
         {
-            printf("\n--%d PESSAO--\n");
+            printf("\n--%d PESSAO--\n", i);
             
             printf("\nidade: %d\n", pessoas[i].idade);
 
@@ -101,11 +110,13 @@ void Mostrar ( Pessoa pessoas[], int cont)
 
             for (int l = 0; l < 4; l++)
             {
-                printf("%s", pessoas[i].formatura.desegnacao_For[l]);
+                printf("\n%s\n", pessoas[i].formatura.desegnacao_For[l]);
 
-                printf("Local: %s ", pessoas[i].formatura.local[l].pais);
-                
-                printf("Local: %s ", pessoas[i].formatura.local[l].provincia);
+                printf("\nLocal: %s/ %s \n", pessoas[i].formatura.local[l].pais, pessoas[i].formatura.local[l].provincia);
+
+                printf("\nData de Formatura: \n");
+
+                printf("%d de %s de %d", pessoas[i].formatura.data_for[l].dia, pessoas[i].formatura.data_for[l].mes), pessoas[i].formatura.data_for[l].ano;
                 
             }
             
