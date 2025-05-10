@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <locale.h>
-#define max 100
+#define MAX 100
 
-int mostrar ( int Ida, int cont);
+void mostrar ( Ida dados, int cont);
 
 struct Ida
 {
-    int idade[max];
+    int idade[MAX];
 };
 typedef struct Ida Ida;
+
 int main()
 {
-    Ida idade; 
-    int soma = 0;
+    Ida idade;
+
+    int soma = 0, cont = 0;
+    
     char opcao; 
-    int cont = 0;
 
     do
    {
@@ -28,7 +30,7 @@ int main()
         switch (opcao)
         {
             case '1':
-                printf("Funciona");
+                mostrar(idade, cont);
             break;
             
             case '2':
@@ -52,14 +54,16 @@ int main()
 
 }
 
-int mostrar ( int Ida, int cont){
-    if (max == cont)
+void mostrar ( Ida dados, int cont){
+    if (cont == 0)
     {
-        /* code */
+        printf("\nnenhuma idade registrada!\n");
     }
-    
-    for(int i = 0; i  ){
-
+    else
+    {
+        for (int i = 0; i < cont; i++)
+        {
+            printf("\nIdade: %d\n", dados.idade[i]);
+        }
     }
-
 }
