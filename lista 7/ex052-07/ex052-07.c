@@ -6,7 +6,7 @@ struct Bebidas
 {
     char nome_bebidas[60];
     int quant_bebida;
-      
+
 };
 typedef struct Bebidas Bebidas;
 
@@ -17,12 +17,15 @@ struct Estoque
     int carne;
     Bebidas bebidas[MAX_BEB];
     int total_bebidas;
+    int posicao_bebuda[MAX_BEB];
 };
 typedef struct Estoque Estoque;
 
 void Estoq (Estoque estoque, int cont);
 
 int Cadastrar ( Estoque *cad, int cont);
+
+int vanda( Estoque *venda, int cont);
 
 int main()
 {
@@ -53,6 +56,7 @@ int main()
         
             case '2':
                 /* Cadastrar Venda */
+                vanda( &estoque, contador); 
             break;
 
             case '3':
@@ -140,9 +144,71 @@ int Cadastrar ( Estoque *cad, int cont)
         
         printf("Quantidade: ");
         scanf("%d", &cad->bebidas[i].quant_bebida);
+
+        cad->posicao_bebuda[i] = i;
         printf("\n-------------\n");
     }
     cad->total_bebidas = tipo_beb;
 
     return  cont + 1;
+}
+
+int vanda( Estoque *venda, int cont)
+{   
+    int bega_vend, beb_vend, nome_beb, max = 5;
+
+    if (venda->pao < max)
+    {
+        printf("\nO Pão está acabando!\n");
+    }
+
+    if (venda->queijo < max)
+    {
+        printf("\nO Queijo está acabando!\n");
+    }
+
+    if (venda->carne < max)
+    {
+        printf("\nA Carne está acabando!\n");
+    }
+    
+    for (int i = 0; i < venda->total_bebidas; i++)
+    {
+        if (venda->bebidas[i].quant_bebida < max)
+        {
+            printf("\n%s está acabando!\n", venda->bebidas[i].nome_bebidas);
+        }
+    }
+    
+    printf("\n--REGISTRAR VENDA--\n");
+
+    printf("\nHamburgues vendidos: ");
+    scanf("%d", &bega_vend);
+
+    venda->pao -= bega_vend;
+    venda->queijo -= bega_vend;
+    venda->carne -= bega_vend;
+    
+    printf("\nBebidas vendidas: ");
+    scanf("%d", &beb_vend);
+    
+    for (int c = 0; c < beb_vend; c++)
+    {
+    
+        printf("\nNome da bebida\n");
+        for (int l = 0; l < venda->total_bebidas; l++)
+        {
+            printf("\n%d-%s \n", l, venda->bebidas[l].nome_bebidas);
+        }
+        scanf(" %d", &nome_beb);
+
+        for (int i = 0; i < venda->total_bebidas; i++)
+        {      
+            if (nome_beb == i)
+            {
+                venda->bebidas[i].quant_bebida -= 1;  
+            }       
+        }
+    }   
+    return cont - 1;
 }
