@@ -1,11 +1,31 @@
 #include <stdio.h>;
 #include <string.h>;
+#define MAX_BEB 10
+
+struct Bebidas
+{
+    char nome_bebidas[60];
+    int quant_bebida;
+      
+};
+typedef struct Bebidas Bebidas;
+
+struct Estoque
+{
+    int pao;
+    int queijo;
+    int carne;
+    Bebidas bebidas[MAX_BEB];
+    int total_bebidas;
+};
+typedef struct Estoque Estoque;
 
 
 int main()
 {
     int contador = 0;
     char opcao;
+    Estoque Estoque;
 
     do
     {   
@@ -39,5 +59,35 @@ int main()
         }
     } while (opcao != '0');
     
+    return 0;
+}
 
+
+void Estoq (Estoque estoque, int cont)
+{
+    printf("\n--ESTOQUE--\n");
+    if (cont == 0)
+    {
+        printf("Estoque Vazio!");
+    }
+
+    else
+    {
+        printf("\nPÃO: %d\n", estoque.pao);
+        printf("QUEIJO: %d", estoque.queijo);
+        printf("CARNE: %d", estoque.carne);
+
+        printf("--Bebidas--");
+
+        for (int i = 0; i < estoque.total_bebidas; i++)
+        {
+            printf("Nome: %s", estoque.bebidas[i].nome_bebidas);
+            
+            printf("Quantidade: %d", estoque.bebidas[i].quant_bebida);
+
+        }
+        
+    }
+    
+    
 }
