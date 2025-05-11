@@ -99,3 +99,29 @@ void Estoq (Estoque estoque, int cont)
     printf("\n---------------\n");
     
 }
+
+int Cadastrar ( Estoque *cad, int cont)
+{   
+    int pao_cad, queijo_cad, tipo_beb;
+
+    printf("--CADASTAR--");
+
+    printf("Pão: ");
+    scanf("%d", &pao_cad);
+    cad->pao = pao_cad;
+
+    printf("Queijo: ");
+    scanf("%d", &queijo_cad);
+    cad->queijo = queijo_cad;
+
+    printf("\n--BEBIDAS--\n");
+
+    printf("Quantos tipos de bebibas: ");
+    scanf("%d", &tipo_beb);
+
+    for (int i = 0; i < tipo_beb; i++)
+    {
+        
+    }
+    
+}
