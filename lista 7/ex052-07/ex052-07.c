@@ -121,7 +121,11 @@ int Cadastrar ( Estoque *cad, int cont)
 
     for (int i = 0; i < tipo_beb; i++)
     {
+        printf("Nome: ");
+        scanf("%c", cad->bebidas->nome_bebidas);
         
+        printf("Quantidade: ");
+        scanf("%d", &cad->bebidas->quant_bebida);
     }
     
 }
