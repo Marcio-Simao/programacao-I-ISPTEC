@@ -1,5 +1,5 @@
-#include <stdio.h>;
-#include <string.h>;
+#include <stdio.h>
+#include <string.h>
 #define MAX_BEB 10
 
 struct Bebidas
@@ -20,12 +20,18 @@ struct Estoque
 };
 typedef struct Estoque Estoque;
 
+void Estoq (Estoque estoque, int cont);
 
 int main()
 {
     int contador = 0;
     char opcao;
-    Estoque Estoque;
+    Estoque estoque;
+    estoque.pao = 0;
+    estoque.queijo = 0;
+    estoque.carne = 0;
+    estoque.total_bebidas = 0;
+
 
     do
     {   
@@ -34,7 +40,8 @@ int main()
         printf("\n2-Registrar Venda\n");
         printf("\n3-Estoque\n");
         printf("\n0-Sair\n");
-        scanf("%c", opcao);
+        scanf(" %c", &opcao);
+
         switch (opcao)
         {
             case '1':
@@ -46,7 +53,7 @@ int main()
             break;
 
             case '3':
-                /* visualizar Estoque */
+                Estoq (estoque, contador);
             break;
 
             case '0':
@@ -54,7 +61,7 @@ int main()
             break;
 
             default:
-                printf("\nVolor invalido!\n");
+                printf("\nValor invalido!\n");
             break;
         }
     } while (opcao != '0');
@@ -68,26 +75,27 @@ void Estoq (Estoque estoque, int cont)
     printf("\n--ESTOQUE--\n");
     if (cont == 0)
     {
-        printf("Estoque Vazio!");
+        printf("\nEstoque Vazio!\n");
     }
 
     else
     {
         printf("\nPÃO: %d\n", estoque.pao);
-        printf("QUEIJO: %d", estoque.queijo);
-        printf("CARNE: %d", estoque.carne);
+        printf("\nQUEIJO: %d\n", estoque.queijo);
+        printf("\nCARNE: %d\n", estoque.carne);
 
-        printf("--Bebidas--");
+        printf("\n--Bebidas--\n");
 
         for (int i = 0; i < estoque.total_bebidas; i++)
         {
-            printf("Nome: %s", estoque.bebidas[i].nome_bebidas);
+            printf("\nNome: %s\n", estoque.bebidas[i].nome_bebidas);
             
-            printf("Quantidade: %d", estoque.bebidas[i].quant_bebida);
+            printf("\nQuantidade: %d\n", estoque.bebidas[i].quant_bebida);
 
         }
         
     }
     
+    printf("\n---------------\n");
     
 }
