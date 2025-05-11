@@ -8,7 +8,13 @@ int main()
     char opcao;
 
     do
-    {
+    {   
+        printf("\n--TuDeliciosoGest--\n");
+        printf("\n1-Cadastrar \n");
+        printf("\n2-Registrar Venda\n");
+        printf("\n3-Estoque\n");
+        printf("\n0-Sair\n");
+        scanf("%c", opcao);
         switch (opcao)
         {
             case '1':
