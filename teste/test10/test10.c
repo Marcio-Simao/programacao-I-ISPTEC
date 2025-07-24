@@ -6,7 +6,8 @@ int main()
     char nome[30];
 
     printf("\nDigite um nome: ");
-    gets(nome);
+    
+    fgets(nome, sizeof(nome), stdin);
 
     printf("\n O seu nome é %s \n\n", nome);
 }
