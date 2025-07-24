@@ -5,7 +5,8 @@
 
 struct Pessoa 
 {
-    char sexo; 
+    char nome[90];
+    char sexo[90]; 
     float peso;
 };
 
@@ -21,8 +22,12 @@ int main()
     
     printf("\n--REGISTRO PESSOA--\n");
     
-    printf("\nSexo(M/F): ");
-    scanf(" %c", &pessoa1.sexo);
+    printf("\nNome Completo: ");
+    scanf("%90[^\n]s", pessoa1.nome);
+    fflush(stdin);
+
+    printf("\nSexo: ");
+    scanf(" %s", pessoa1.sexo);
     
     printf("Peso: ");
     scanf("%f", &pessoa1.peso);
@@ -32,8 +37,10 @@ int main()
     //Apresentando os dados na tela
     
     printf("\n--PESSOAS REGISTRADAS--\n");
+
+    printf("\nNome Completo: %s", pessoa1.nome);
     
-    printf("\nSexo: %c\n", pessoa1.sexo);
+    printf("\nSexo: %s\n", pessoa1.sexo);
     
     printf("\npeso: %.2f\n", pessoa1.peso);
     
